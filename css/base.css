@@ -1,0 +1,18 @@
+/*
+* @Author: asus
+* @Date:   2017-12-02 15:19:16
+* @Last Modified by:   asus
+* @Last Modified time: 2017-12-14 15:49:10
+*/
+*{
+	margin: 0;
+    padding:0;
+    font-family: "微软雅黑","宋体",sans-serif;
+    font-size: 12px;
+    list-style: none;
+    font-style: normal;
+   /*  background: #f2f2f2 */
+}
+a{
+	text-decoration: none;
+}
