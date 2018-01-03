@@ -43,7 +43,6 @@
 	}else if(bir==="l"){
 		n--;
 	}
-	
 	if(n===imgs.length){
 		n=0;
 	}
@@ -76,8 +75,8 @@
 	}
 	jtz.onclick=function(){
 	if(flag){
-	flag=false;
-	fn("l");
+		flag=false;
+		fn("l");
 		}
 	}
 	imgs.forEach(function(ele,index){
@@ -158,3 +157,59 @@
 				}
 			})	
 }
+//侧导航
+{
+	let cdh=document.querySelectorAll(".cedh .dhk ul li")
+	console.log(cdh)
+	let lou=document.querySelectorAll(".bigbox .conlist .nnnn")
+	console.log(lou)
+	cdh.forEach(function(ele,index){
+		ele.onclick=function(){
+			let tg=lou[index].offsetTop-50;
+			console.log(tg)
+			let asd=document.documentElement.scrollTop;
+			let speed=(tg-asd)*30/300;
+			let time=0
+			let ss=setInterval(function(){
+				time+=30
+				asd+=speed
+				if(time==300){
+				asd=tg
+				clearInterval(ss)
+			}
+			document.documentElement.scrollTop=asd
+		},30)
+	}
+	})
+
+//顶部按钮
+
+	let topbar=document.querySelector(".d")
+	let leftbar=document.querySelector(".cedh")
+	window.onscroll=function(){
+				 let st=document.documentElement.scrollTop;
+				 if(st>900){
+				 	topbar.style.display="block";
+					
+				 }else{
+				 	topbar.style.display="none"
+				 }
+				 if(st>2500){
+				 	leftbar.style.display="block"
+				 }else{
+				 	leftbar.style.display="none"
+				 }
+//				lou.forEach(function(ele,index){
+//				 	if(st>ele.offsetTop){
+//				 		for(var i=0;i<lou.length;i++){
+//				 		leftbar[i].classList.remove("active")
+//				 		leftbar[index].classList.add("active")
+//				 	}
+//				 }
+//				 })
+//				 
+			}
+}
+
+
+
